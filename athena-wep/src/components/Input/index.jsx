@@ -1,8 +1,8 @@
 import "./styles.css"
 
-function Input({ type, placeholder }) {
+function Input({ ...props }) {
   return (
-    <input type={type} placeholder={placeholder} className="input-container"/>
+    <input className="input-container" {...props} />
   )
 }
 

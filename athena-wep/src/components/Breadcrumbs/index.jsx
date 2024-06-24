@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom"
-import { ChevronRight } from "lucide-react"
+import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 
-import "./styles.css"
+import "./styles.css";
 
 function Breadcrumbs({ options }) {
   return (
@@ -10,14 +10,14 @@ function Breadcrumbs({ options }) {
         {options.map(({ label, path, activeLink }, index) => {
           return (
             <li key={path} className={activeLink ? "active-link" : ""}>
-              <Link>{label}</Link>
+              <Link to={path}>{label}</Link>
               {index < options.length - 1 && <ChevronRight size={20} />}
             </li>
-          )
+          );
         })}
       </ol>
     </nav>
-  )
+  );
 }
 
-export default Breadcrumbs
+export default Breadcrumbs;

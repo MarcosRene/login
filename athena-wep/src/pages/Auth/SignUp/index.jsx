@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Button from "../../../components/Button"
 import Input from "../../../components/Input"
 
@@ -17,7 +18,7 @@ function SignUp() {
 
         <Input type="password" placeholder="Confirmar senha" />
           
-        <a href="https://google.com" target="_target">Voltar para login 👈</a>
+        <Link href="https://google.com" target="_target">Voltar para login 👈</Link>
 
         <Button type="submit">Cadastrar</Button>
       </form>

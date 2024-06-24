@@ -5,6 +5,8 @@ import SignUp from './pages/Auth/SignUp'
 import AuthLayout from './pages/layout/Auth'
 import AppLayout from './pages/layout/App'
 import Schedules from './pages/App/Schedules'
+import NewSchedule from './pages/App/NewSchedule'
+import EditSchedule from './pages/App/EditSchedule'
 
 import './styles.css'
 
@@ -19,6 +21,8 @@ function App() {
 
         <Route path="/" element={<AppLayout />}>
           <Route path="schedules" element={<Schedules />} />
+          <Route path="new-schedule" element={<NewSchedule />} />
+          <Route path="edit-schedule/:scheduleId" element={<EditSchedule />} />
         </Route>
       </Routes>
     </BrowserRouter>
