@@ -5,6 +5,7 @@
 
 .breadcrumbs-container ol,
 .breadcrumbs-container ol li {
+  padding: 0px;
   display: flex;
 }
 
