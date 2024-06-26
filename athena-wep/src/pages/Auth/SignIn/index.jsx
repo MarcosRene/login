@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom"
-import Button from "../../../components/Button"
-import Input from "../../../components/Input"
+import { Link } from "react-router-dom";
+import Button from "../../../components/Button";
+import Input from "../../../components/Input";
 
-import "./styles.css"
+import "./styles.css";
 
 function SignIn() {
   return (
@@ -18,12 +18,12 @@ function SignIn() {
 
         <Input type="password" placeholder="Senha" />
 
-        <Link to="/sign-up" href="https://google.com" target="_target">Cadastre-se aqui 👈</Link>
-        
+        <Link to="/sign-up">Cadastre-se aqui 👈</Link>
+
         <Button type="submit">Entrar</Button>
       </form>
     </div>
-  )
+  );
 }
 
-export default SignIn
+export default SignIn;
