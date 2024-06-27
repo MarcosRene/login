@@ -9,16 +9,16 @@ function Select({ options, ...props }) {
 
         {options.map(({ label, value }) => {
           return (
-            <option value={value}>
+            <option key={value} value={value}>
               {label}
             </option>
-          )
+          );
         })}
       </select>
 
       <ChevronDown size={18} />
     </div>
-  )
+  );
 }
 
-export default Select
+export default Select;

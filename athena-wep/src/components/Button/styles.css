@@ -15,3 +15,8 @@
 .button-container:hover {
   background: var(--green-700);
 }
+
+.button-container:disabled {
+  background: var(--green-700);
+  cursor: not-allowed;
+}

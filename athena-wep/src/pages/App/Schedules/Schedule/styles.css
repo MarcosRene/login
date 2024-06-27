@@ -87,10 +87,6 @@
   display: inline-flex;
 }
 
-.schedules-container li .schedules-item-body span:last-child {
-  -webkit-line-clamp: 2;
-}
-
 .schedules-container li .schedules-item-date {
   width: 100%;
   margin-top: auto;

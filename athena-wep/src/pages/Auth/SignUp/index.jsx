@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../../components/Button";
@@ -15,10 +15,6 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    toast.success("Usuário cadastrado com sucesso!");
-  }, []);
 
   async function register(event) {
     event.preventDefault();

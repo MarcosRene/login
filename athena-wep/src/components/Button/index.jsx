@@ -1,9 +1,11 @@
-import "./styles.css"
+import "./styles.css";
 
-function Button({ children, type }) {
+function Button({ children, ...props }) {
   return (
-    <button type={type} className="button-container">{children}</button>
-  ) 
+    <button className="button-container" {...props}>
+      {children}
+    </button>
+  );
 }
 
-export default Button
+export default Button;
