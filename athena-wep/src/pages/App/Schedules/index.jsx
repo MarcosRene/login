@@ -10,6 +10,8 @@ import { api } from "../../../services/api";
 
 import Schedule from "./Schedule";
 
+import empty from "../../../assets/empty.svg";
+
 import "./styles.css";
 
 function Schedules() {
@@ -27,6 +29,23 @@ function Schedules() {
       toast.error("Não foi possível carregar os professores. Tente novamente!");
     } finally {
       setIsSchedulesLoading(false);
+    }
+  }
+
+  async function deleteSchedule(scheduleId) {
+    try {
+      await api.delete(`/schedules/${scheduleId}`);
+
+      const filteredSchedules = schedules.filter(
+        (schedule) => schedule._id !== scheduleId
+      );
+      setSchedules(filteredSchedules);
+
+      toast.success("Agendamento excluído com sucesso!");
+    } catch (error) {
+      toast.error(
+        "Não foi possível excluír este agendamento. Tente novamente!"
+      );
     }
   }
 
@@ -52,7 +71,20 @@ function Schedules() {
 
         <div className="schedules-list">
           {isSchedulesLoading && !schedules.length > 0 && <p>Carregando...</p>}
-          {schedules.length > 0 && <Schedule schedules={schedules} />}
+
+          {schedules.length > 0 && (
+            <Schedule schedules={schedules} onDelete={deleteSchedule} />
+          )}
+
+          {schedules.length === 0 && !isSchedulesLoading && (
+            <div className="empty-container">
+              <img src={empty} alt="Lista vazia" />
+
+              <h3>Você não possui agendamentos disponíveis!</h3>
+
+              <Link to="/new-schedule">Criar um agendamento</Link>
+            </div>
+          )}
         </div>
       </div>
     </section>

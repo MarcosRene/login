@@ -43,3 +43,23 @@
   align-items: center;
   justify-content: center;
 }
+
+.dashboard-container .dashboard-content .schedules-list .empty-container {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard-container .dashboard-content .schedules-list .empty-container h3 {
+  font-weight: 500;
+}
+
+.dashboard-container .dashboard-content .schedules-list .empty-container a {
+  line-height: 20px;
+  text-decoration: underline;
+  display: block;
+  color: var(--green-500);
+}

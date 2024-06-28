@@ -4,27 +4,35 @@ import { Pencil, Trash2 } from "lucide-react";
 import Button from "../../../../components/Button";
 import "./styles.css";
 
-function Schedule({ schedules }) {
+function Schedule({ schedules, onDelete }) {
   const navigate = useNavigate();
 
   return (
     <ul className="schedules-container">
       {schedules.map((schedule) => {
+        console.log(schedule);
+
         return (
           <li key={schedule._id}>
             <div className="schedules-item-head">
-              <Link to={`/edit-schedule/${schedule._id}`}>
-                {schedule.identifier}
-              </Link>
+              {!schedule.oldScheduling ? (
+                <Link to={`/edit-schedule/${schedule._id}`}>
+                  {schedule.identifier}
+                </Link>
+              ) : (
+                <span className="identifier">{schedule.identifier}</span>
+              )}
 
               <div>
-                <Button
-                  onClick={() => navigate(`/edit-schedule/${schedule._id}`)}
-                >
-                  <Pencil size={16} />
-                </Button>
+                {!schedule.oldScheduling && (
+                  <Button
+                    onClick={() => navigate(`/edit-schedule/${schedule._id}`)}
+                  >
+                    <Pencil size={16} />
+                  </Button>
+                )}
 
-                <Button>
+                <Button onClick={() => onDelete(schedule._id)}>
                   <Trash2 size={16} />
                 </Button>
               </div>
